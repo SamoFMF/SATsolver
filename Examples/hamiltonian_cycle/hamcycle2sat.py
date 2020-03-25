@@ -4,7 +4,7 @@ import sys
 from collections import defaultdict
 
 #############################################################################
-# HAMILTONIAN PATH TO SAT                                                   #
+# HAMILTONIAN CYCLE TO SAT                                                  #
 #                                                                           #
 # x_{i,r} ... i-th node is the r-th node in the path | 0<=i<=n-1, 0<=r<=k-1 #
 #                                                                           #
@@ -69,6 +69,9 @@ def hampath2sat(f):
                 cnf += f"-{x} -{y} 0\n"
 
                 numOfDisj += 2
+            cnf += f"-{i*n + n} -{j*n + 1} 0\n"
+            cnf += f"-{i*n + 1} -{j*n + n} 0\n"
+            numOfDisj += 2
     return f"p cnf {n**2} {numOfDisj}\n" + cnf
 
 def main():
