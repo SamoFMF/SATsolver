@@ -9,7 +9,7 @@ from cdcl import solve as solvecdcl
 def main():
     inFile = sys.argv[1]
     outFile = sys.argv[2]
-    options, _ = getopt(sys.argv[3:], "dr:p:h:", ["dpll", "resets=", "resetPoint=", "heuristics="])
+    options, _ = getopt(sys.argv[3:], "drp:h", ["dpll", "resets", "resetPoint=", "heuristics"])
 
     # Default values
     dpll = False
@@ -21,11 +21,11 @@ def main():
         if o == "--dpll" or o == "-d":
             dpll = True
             break
-        elif (o == "--resets" or o == "-r") and (v == "False" or v == "0"):
+        elif o == "--resets" or o == "-r":
             resets = False
         elif o == "--resetPoint" or o == "-p":
             resetPoint = int(v)
-        elif v == "False" or v == "0":
+        else:
             heuristics = False
     
     # Create CNF
