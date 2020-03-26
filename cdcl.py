@@ -493,7 +493,8 @@ class CDCL:
                             # Update heap and priority values
                             for l in wL:
                                 x = self.variables[l] if l>0 else self.variables[-l]
-                                x.updateHeapVal(l)
+                                if x.heap:
+                                    x.updateHeapVal(l)
                     elif status == UNSAT:
                         # Clause is not satisfiable
                         # Usually means that there is only 1 literal in it

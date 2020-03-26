@@ -9,31 +9,33 @@ from cdcl import solve as solvecdcl
 def main():
     inFile = sys.argv[1]
     outFile = sys.argv[2]
-    options, _ = getopt(sys.argv[3:], "drp:h", ["dpll", "resets", "resetPoint=", "heuristics"])
+    options, _ = getopt(sys.argv[3:], "drp:hl", ["dpll", "resets", "resetPoint=", "heuristics", "pureLiterals"])
 
     # Default values
     dpll = False
     resets = True
     resetPoint = 100
     heuristics = True
-    # U
-    # pdate options
+    usePureLiterals = True
+
+    # Update options
     for o,v in options:
         if o == "--dpll" or o == "-d":
             dpll = True
-            break
         elif o == "--resets" or o == "-r":
             resets = False
         elif o == "--resetPoint" or o == "-p":
             resetPoint = int(v)
-        else:
+        elif o == "-h" or o == "-heuristics":
             heuristics = False
+        else:
+            usePureLiterals = False
     
     # Create CNF
     if dpll:
         # DPLL
         print("Running DPLL algorithm.")
-        solvedpll(inFile, outFile)
+        solvedpll(inFile, outFile, usePureLiterals)
     else:
         print(f"Running CDCL algorithm {'with' if resets else 'without'} resets, {'with a reset point at ' + str(resetPoint) + ', ' if resets else ''}and {'with' if heuristics else 'without'} heuristics.")
         solvecdcl(inFile, outFile, resets, resetPoint, heuristics)
