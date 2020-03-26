@@ -32,9 +32,9 @@ def hampath2sat(f):
     # We can't calculate the number of clauses, because the formula
     # would be wrong if there were multiple inputs of the same edge
     # in the input or vertices connected to themselves
-    numOfDisj = n**2 * (n+3) // 2
+    numOfDisj = n * (2 + n*(n-1)//2)
     cnf = ""
-    # There is atleast 1 node in every position
+    # There is atleast 1 node in every position || n
     for r in range(n):
         for i in range(n):
             x = i*n + r + 1
@@ -72,20 +72,13 @@ def hampath2sat(f):
     return f"p cnf {n**2} {numOfDisj}\n" + cnf
 
 def main():
-    if len(sys.argv) > 3:
-        k = int(sys.argv[1])
-        inFile = open(sys.argv[2])
-        outFile = open(sys.argv[3], "w")
-    elif len(sys.argv) == 3:
-        k = int(sys.argv[1])
-        inFile = open(sys.argv[2])
-        outFile = sys.stdout
+    if len(sys.argv) > 2:
+        inFile = open(sys.argv[1])
+        outFile = open(sys.argv[2], "w")
     elif len(sys.argv) == 2:
-        k = int(sys.argv[1])
-        inFile = sys.stdin
+        inFile = open(sys.argv[1])
         outFile = sys.stdout
     else:
-        k = int(sys.stdin.readline())
         inFile = sys.stdin
         outFile = sys.stdout
     cnf = hampath2sat(inFile)

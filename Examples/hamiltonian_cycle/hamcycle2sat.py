@@ -12,7 +12,7 @@ from collections import defaultdict
 #   x_{i,r} = i*k + r + 1                                                   #
 #############################################################################
 
-def hampath2sat(f):
+def hamcycle2sat(f):
     line = f.readline()
     while line[0] == "c":
         line = f.readline()
@@ -32,7 +32,7 @@ def hampath2sat(f):
     # We can't calculate the number of clauses, because the formula
     # would be wrong if there were multiple inputs of the same edge
     # in the input or vertices connected to themselves
-    numOfDisj = n**2 * (n+3) // 2
+    numOfDisj = n * (2 + n*(n-1)//2)
     cnf = ""
     # There is atleast 1 node in every position
     for r in range(n):
@@ -84,7 +84,7 @@ def main():
     else:
         inFile = sys.stdin
         outFile = sys.stdout
-    cnf = hampath2sat(inFile)
+    cnf = hamcycle2sat(inFile)
     outFile.write(cnf)
     inFile.close()
     outFile.close()

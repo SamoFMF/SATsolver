@@ -15,11 +15,10 @@ def dom2sat(f, k):
         _, i, j = f.readline().rstrip("\n").split()
         i = int(i)
         j = int(j)
-        if j<i:
-            i,j = j,i
-        elif i == j:
+        if i == j:
             continue
         nodes[i].append(j)
+        nodes[j].append(i)
     numOfDisj = k + k*n*(n+k-2)//2 + n-1
     cnf = f"p cnf {n*k} {numOfDisj}\n"
     # Atleast 1 node in every position
@@ -54,9 +53,9 @@ def dom2sat(f, k):
             for r in range(k):
                 x = (i-1)*k + r + 1
                 cnf += str(x) + " "
-            for j in nodes[i]:
-                x = (j-1)*k + r + 1
-                cnf += str(x) + " "
+                for j in nodes[i]:
+                    x = (j-1)*k + r + 1
+                    cnf += str(x) + " "
             cnf += "0\n"
     return cnf
 

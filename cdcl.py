@@ -209,6 +209,7 @@ class CDCL:
         self.heap = None
         self.resetPoint = resetPoint
         self.alreadyUsed = set() # Set of already used starting variables
+        self.startNumOfClauses = len(self.cnf) # Used in the end to get the number of conflicts
 
         # Choose correct solver
         if resets:
@@ -511,6 +512,7 @@ def solve(inFile, outFile, resets=True, resetPoint=100, heuristics=True):
     t = time()
     x = sat.solve()
     print(time()-t)
+    print(f"{len(sat.cnf)-sat.startNumOfClauses} conflicts")
     print(x)
     with open(outFile, "w") as f:
         if x == UNSAT:

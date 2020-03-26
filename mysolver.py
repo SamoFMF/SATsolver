@@ -16,7 +16,8 @@ def main():
     resets = True
     resetPoint = 100
     heuristics = True
-    # Update options
+    # U
+    # pdate options
     for o,v in options:
         if o == "--dpll" or o == "-d":
             dpll = True
