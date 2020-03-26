@@ -59,4 +59,5 @@ domset | 0.00s | 0.00s | 0.00s | 0.00s
 hamiltonian path 1 | :x: | :x: | 55.73s | 76.00s
 hamiltonian path 2 | 179.29s | 175.28s | 0.10s | 0.10s
 hamiltonian path 3 | :x: | :x: | 1.02s | 14.89s
-hamiltonian cycle 1 | :x: | :x: | 2.63s | 4.32s
+hamiltonian cycle 2 | 49.06s | 49.19s | 0.08s | 0.08s
+hamiltonian cycle 3 | :x: | :x: | 2.62s | 4.68s
