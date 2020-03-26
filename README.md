@@ -31,9 +31,10 @@ Running the program can be done through the terminal:
 `python mysolver.py inputfile.txt outputfile.txt`
 
 Additionally we can add several options to change the behaviour of the algorithm:
-* `-d` or `--dpll`: use `DPLL` instead of `CDCL` (all other options are ignored in this case)
+* `-d` or `--dpll`: use `DPLL` instead of `CDCL` (suggested to use with `-l`)
+* `-l` or `--pureLiterals`: runs `DPLL` without checking for pure literals (in practice this usually greatly increases performance)
 * `-r` or `--resets`: runs `CDCL` without resets
 * `-h` or `--heuristics`: runs `CDCL` without heuristics (chooses the first available variable when making a decision)
 * `-p:` or `--resetPoint=`: takes an integer and determines the starting point for reset depth
 
-Some problems may be solved faster with different settings, thus these options are available.
+Some problems may be solved faster with different settings, thus these options are available. Take note that changing settings concerning pure literals only works for `DPLL` algorithm, while the rest of the options only change the behaviour of the `CDCL` algorithm.
