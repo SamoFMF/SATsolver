@@ -44,7 +44,7 @@ Additionally we can add several options to change the behaviour of the algorithm
 Some problems may be solved faster with different settings, thus these options are available. Take note that changing settings concerning pure literals only works for `DPLL` algorithm, while the rest of the options only change the behaviour of the `CDCL` algorithm.
 
 ## Setting up tests
-Several `Python` files are included that generate SAT problems. Those are n-queens, dominating set, colourability, hamiltonian path, hamiltonian cycle and sudoku.
+Several `Python` files are included that generate SAT problems. Those are [n-queens](Examples/nqueens/nqueens2sat.py), [dominating set](Examples/domset/domset2sat.py), [colourability](Examples/colourability/col2sat.py), [hamiltonian path](Examples/hamiltonian_path/hampath2sat.py), [hamiltonian cycle](Examples/hamiltonian_cycle/hamcycle2sat.py) and [sudoku](Examples/sudoku/sudoku2sat.py).
 
 ## Benchmarking
 Below are some benchmarks using both algorithms with different options. All test files can be found in [Examples](Examples). If the solution was not found within 5 minutes, the program was stopped (marked with :x: in the table).
