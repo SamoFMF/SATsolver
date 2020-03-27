@@ -48,16 +48,16 @@ Below are some benchmarks using both algorithms with different options. All test
 
 Input file | DPLL | DPLL -l | CDCL | CDCL -r
 ---------- | ---- | ------- | ---- | -------
-sudoku_hard | 0.06s | 0.04s | 0.04s | 0.04s
-sudoku_easy | 0.03s | 0.02s | 0.041s | 0.04s
-15-queens | 0.25s | 0.25s | 1.01s | 1.02s
-20-queens | 32.35s | 32.25s | 8.08s | 8.27s
-33-queens | :x: | :x: | 1.55s | :x:
-col1 | 0.00s | 0.00s | 0.00s | 0.00s
-col3 | :x: | :x: | 0.99s | 1.00s
-domset | 0.00s | 0.00s | 0.00s | 0.00s
-hamiltonian path 1 | :x: | :x: | 55.73s | 76.00s
-hamiltonian path 2 | 179.29s | 175.28s | 0.10s | 0.10s
-hamiltonian path 3 | :x: | :x: | 1.02s | 14.89s
-hamiltonian cycle 2 | 49.06s | 49.19s | 0.08s | 0.08s
-hamiltonian cycle 3 | :x: | :x: | 2.62s | 4.68s
+[sudoku_easy](Examples/sudoku/s2/sat.txt) | 0.03s | 0.02s | 0.04s | 0.04s
+[sudoku_hard](Examples/sudoku/s1/sat.txt) | 0.06s | 0.04s | 0.04s | 0.04s
+[15-queens](Examples/nqueens/sat15.txt) | 0.25s | 0.25s | 1.01s | 1.02s
+[20-queens](Examples/nqueens/sat20.txt) | 32.35s | 32.25s | 8.08s | 8.27s
+[33-queens](Examples/nqueens/sat33.txt) | :x: | :x: | 1.55s | :x:
+[colourability 1](Examples/colourability/g1/sat2.txt) | 0.00s | 0.00s | 0.00s | 0.00s
+[colourability 2](Examples/colourability/g2/sat5.txt) | :x: | :x: | 0.99s | 1.00s
+[dominating set](Examples/domset/g1/sat3.txt) | 0.00s | 0.00s | 0.00s | 0.00s
+[hamiltonian path 1](Examples/hamiltonian_path/g1/sat.txt) | :x: | :x: | 55.73s | 76.00s
+[hamiltonian path 2](Examples/hamiltonian_path/g2/sat.txt) | 179.29s | 175.28s | 0.10s | 0.10s
+[hamiltonian path 3](Examples/hamiltonian_path/g3/sat.txt) | :x: | :x: | 1.02s | 14.89s
+[hamiltonian cycle 1](Examples/hamiltonian_cycle/g1/sat.txt) | 49.06s | 49.19s | 0.08s | 0.08s
+[hamiltonian cycle 3](Examples/hamiltonian_cycle/g2/sat.txt) | :x: | :x: | 2.62s | 4.68s
