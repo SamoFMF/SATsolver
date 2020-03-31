@@ -1,6 +1,9 @@
 # SATsolver #
 SAT solver for a school project. Two methods were implemented. Both take a CNF in DIMACS format as input and return the result in DIMACS format.
 
+## Additional instructions
+Instructions also state that a problem should be added to the repository that can be solved within a minute and demonstrates the strengths of the algorithm. I'd suggest two problems, the first is a [Hamiltonian path](Examples/hamiltonian_path/g1/sat.txt). This specific example pushes the algorithm to nearly a minute of execution time. The second is the [33-queens](Examples/nqueens/sat33.txt) problem which was not solved by any iteration of my solvers until `Resets` were added. This means that it demonstrates the strengths of the algorithm quite well.
+
 ## Algorithms
 Two different algorithms were implemented with different options and upgrades. Below is a table comparing both of them.
 
@@ -27,7 +30,7 @@ Resets are used to stop the algorithm from searching too deep when wrong decisio
 The algorithm resets when the depth of atleast `100` is reached and starts over. The depth needed to restart is then multiplied by `1.1`. Heuristic values may have changed in that time (because of new clauses), therefor the algorithm might traverse down a different path.
 
 ## Running the program
-Running the program can be done through the terminal:
+Running the program can be done with the following command-line command:
 
 `python mysolver.py inputfile.txt outputfile.txt`
 
@@ -41,7 +44,7 @@ Additionally we can add several options to change the behaviour of the algorithm
 Some problems may be solved faster with different settings, thus these options are available. Take note that changing settings concerning pure literals only works for `DPLL` algorithm, while the rest of the options only change the behaviour of the `CDCL` algorithm.
 
 ## Setting up tests
-Several `Python` files are included that generate SAT problems. Those are n-queens, dominating set, colourability, hamiltonian path, hamiltonian cycle and sudoku.
+Several `Python` files are included that generate SAT problems. Those are [n-queens](Examples/nqueens/nqueens2sat.py), [dominating set](Examples/domset/domset2sat.py), [colourability](Examples/colourability/col2sat.py), [hamiltonian path](Examples/hamiltonian_path/hampath2sat.py), [hamiltonian cycle](Examples/hamiltonian_cycle/hamcycle2sat.py) and [sudoku](Examples/sudoku/sudoku2sat.py).
 
 ## Benchmarking
 Below are some benchmarks using both algorithms with different options. All test files can be found in [Examples](Examples). If the solution was not found within 5 minutes, the program was stopped (marked with :x: in the table).
