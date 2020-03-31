@@ -32,7 +32,7 @@ The algorithm resets when the depth of atleast `100` is reached and starts over.
 ## Running the program
 Running the program can be done with the following command-line command:
 
-`python mysolver.py inputfile.txt outputfile.txt [options]`
+`python mysolver.py <inputfilename> <outputfilename> [options]`
 
 Available options to change the behaviour of the algorithm are:
 * `-d` or `--dpll`: use `DPLL` instead of `CDCL` (suggested to use with `-l`)
