@@ -34,7 +34,7 @@ Running the program can be done with the following command-line command:
 
 `python mysolver.py inputfile.txt outputfile.txt [options]`
 
-Additionally we can add several options to change the behaviour of the algorithm:
+Available options to change the behaviour of the algorithm are:
 * `-d` or `--dpll`: use `DPLL` instead of `CDCL` (suggested to use with `-l`)
 * `-l` or `--pureLiterals`: runs `DPLL` without checking for pure literals (in practice this usually greatly increases performance)
 * `-r` or `--resets`: runs `CDCL` without resets
