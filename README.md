@@ -40,6 +40,7 @@ Additionally we can add several options to change the behaviour of the algorithm
 * `-r` or `--resets`: runs `CDCL` without resets
 * `-h` or `--heuristics`: runs `CDCL` without heuristics (chooses the first available variable when making a decision)
 * `-p:` or `--resetPoint=`: takes an integer and determines the starting point for reset depth
+* `-c` or `--conflicts`: prints the number of conflicts found while solving the problem
 
 Some problems may be solved faster with different settings, thus these options are available. Take note that changing settings concerning pure literals only works for `DPLL` algorithm, while the rest of the options only change the behaviour of the `CDCL` algorithm.
 
