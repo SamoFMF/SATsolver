@@ -56,16 +56,16 @@ Below are some benchmarks using both algorithms with different options. All test
 
 Input file | DPLL | DPLL -l | CDCL | CDCL -r
 ---------- | ---- | ------- | ---- | -------
-[sudoku_easy](Examples/sudoku/s2/sat.txt) | 0.03s | 0.02s | 0.04s | 0.04s
-[sudoku_hard](Examples/sudoku/s1/sat.txt) | 0.06s | 0.04s | 0.04s | 0.04s
-[15-queens](Examples/nqueens/sat15.txt) | 0.25s | 0.25s | 1.01s | 1.02s
-[20-queens](Examples/nqueens/sat20.txt) | 32.35s | 32.25s | 8.08s | 8.27s
-[33-queens](Examples/nqueens/sat33.txt) | :x: | :x: | 1.55s | :x:
-[colourability 1](Examples/colourability/g1/sat2.txt) | 0.00s | 0.00s | 0.00s | 0.00s
-[colourability 2](Examples/colourability/g2/sat5.txt) | :x: | :x: | 0.99s | 1.00s
-[dominating set](Examples/domset/g1/sat3.txt) | 0.00s | 0.00s | 0.00s | 0.00s
-[hamiltonian path 1](Examples/hamiltonian_path/g1/sat.txt) | :x: | :x: | 55.73s | 76.00s
-[hamiltonian path 2](Examples/hamiltonian_path/g2/sat.txt) | 179.29s | 175.28s | 0.10s | 0.10s
-[hamiltonian path 3](Examples/hamiltonian_path/g3/sat.txt) | :x: | :x: | 1.02s | 14.89s
-[hamiltonian cycle 1](Examples/hamiltonian_cycle/g1/sat.txt) | 49.06s | 49.19s | 0.08s | 0.08s
-[hamiltonian cycle 3](Examples/hamiltonian_cycle/g2/sat.txt) | :x: | :x: | 2.62s | 4.68s
+[sudoku_easy](Examples/sudoku/s2/sat.txt) | [0.03s](Examples/sudoku/s2/sol3.txt) | [0.02s](Examples/sudoku/s2/sol4.txt) | [0.04s](Examples/sudoku/s2/sol1.txt) | [0.04s](Examples/sudoku/s2/sol2.txt)
+[sudoku_hard](Examples/sudoku/s1/sat.txt) | [0.06s](Examples/sudoku/s1/sol3.txt) | [0.04s](Examples/sudoku/s1/sol4.txt) | [0.04s](Examples/sudoku/s1/sol1.txt) | [0.04s](Examples/sudoku/s1/sol2.txt)
+[15-queens](Examples/nqueens/sat15.txt) | [0.25s](Examples/nqueens/sol153.txt) | [0.25s](Examples/nqueens/sol154.txt) | [1.01s](Examples/nqueens/sol151.txt) | [1.02s](Examples/nqueens/sol152.txt)
+[20-queens](Examples/nqueens/sat20.txt) | [32.35s](Examples/nqueens/sol203.txt) | [32.25s](Examples/nqueens/sol204.txt) | [8.08s](Examples/nqueens/sol201.txt) | [8.27s](Examples/nqueens/sol202.txt)
+[33-queens](Examples/nqueens/sat33.txt) | :x: | :x: | [1.55s](Examples/nqueens/sol331.txt) | :x:
+[colourability 1](Examples/colourability/g1/sat2.txt) | [0.00s](Examples/colourability/g1/sol3.txt) | [0.00s](Examples/colourability/g1/sol4.txt) | [0.00s](Examples/colourability/g1/sol1.txt) | [0.00s](Examples/colourability/g1/sol2.txt)
+[colourability 2](Examples/colourability/g2/sat5.txt) | :x: | :x: | [0.99s](Examples/colourability/g2/sol1.txt) | [1.00s](Examples/colourability/g2/sol2.txt)
+[dominating set](Examples/domset/g1/sat3.txt) | [0.00s](Examples/domset/g1/sol3.txt) | [0.00s](Examples/domset/g1/sol4.txt) | [0.00s](Examples/domset/g1/sol1.txt) | [0.00s](Examples/domset/g1/sol2.txt)
+[hamiltonian path 1](Examples/hamiltonian_path/g1/sat.txt) | :x: | :x: | [55.73s](Examples/hamiltonian_path/g1/sol1.txt) | [76.00s](Examples/hamiltonian_path/g1/sol2.txt)
+[hamiltonian path 2](Examples/hamiltonian_path/g2/sat.txt) | [179.29s](Examples/hamiltonian_path/g2/sol3.txt) | [175.28s](Examples/hamiltonian_path/g2/sol4.txt) | [0.10s](Examples/hamiltonian_path/g2/sol1.txt) | [0.10s](Examples/hamiltonian_path/g2/sol2.txt)
+[hamiltonian path 3](Examples/hamiltonian_path/g3/sat.txt) | :x: | :x: | [1.02s](Examples/hamiltonian_path/g3/sol1.txt) | [14.89s](Examples/hamiltonian_path/g3/sol2.txt)
+[hamiltonian cycle 1](Examples/hamiltonian_cycle/g1/sat.txt) | [49.06s](Examples/hamiltonian_cycle/g1/sol3.txt) | [49.19s](Examples/hamiltonian_cycle/g1/sol4.txt) | [0.08s](Examples/hamiltonian_cycle/g1/sol1.txt) | [0.08s](Examples/hamiltonian_cycle/g1/sol2.txt)
+[hamiltonian cycle 2](Examples/hamiltonian_cycle/g2/sat.txt) | :x: | :x: | [2.62s](Examples/hamiltonian_cycle/g2/sol1.txt) | [4.68s](Examples/hamiltonian_cycle/g2/sol2.txt)
