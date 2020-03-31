@@ -2,9 +2,6 @@
 # Homework: Implementing a SAT Solver
 
 import sys
-from time import time
-
-__all__ = ['solve']
 
 def dpll(cnf, numOfVars=729, usePureLiterals=True):
     varVals = [None]*numOfVars
@@ -128,9 +125,7 @@ def createCNF(inFile):
 
 def solve(inFile, outFile, usePureLiterals=True):
     cnf, numOfVars = createCNF(inFile)
-    t = time()
     solution = dpll(cnf, numOfVars, usePureLiterals)
-    print(time()-t)
     print("SATISFIED" if solution else "UNSATISFIABLE")
     with open(outFile, "w") as f:
         if solution:
@@ -139,9 +134,7 @@ def solve(inFile, outFile, usePureLiterals=True):
             f.write("0")
 
 def main():
-    t = time()
     solve(sys.argv[1], sys.argv[2])
-    print(time()-t)
 
 if __name__ == "__main__":
     main()

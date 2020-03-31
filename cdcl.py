@@ -8,7 +8,6 @@
 
 import sys
 from myheap import heapify, decreaseKey
-from time import time
 
 # CONSTANTS
 SAT = "SATISFIED" # Satisfied
@@ -507,13 +506,12 @@ class CDCL:
                         continue
         return SAT
 
-def solve(inFile, outFile, resets=True, resetPoint=100, heuristics=True):
+def solve(inFile, outFile, resets=True, resetPoint=100, heuristics=True, conflicts=False):
     cnf, var = readInput(inFile)
     sat = CDCL(cnf, var, resets, resetPoint, heuristics)
-    t = time()
     x = sat.solve()
-    print(time()-t)
-    print(f"{len(sat.cnf)-sat.startNumOfClauses} conflicts")
+    if conflicts:
+        print(f"{len(sat.cnf)-sat.startNumOfClauses} conflicts")
     print(x)
     with open(outFile, "w") as f:
         if x == UNSAT:
@@ -522,9 +520,7 @@ def solve(inFile, outFile, resets=True, resetPoint=100, heuristics=True):
             f.write(" ".join(map(str, [i.i if i.val == 1 else -i.i for i in sat.variables.values()])))
 
 def main():
-    t = time()
     solve(sys.argv[1], sys.argv[2])
-    print(time()-t)
 
 if __name__ == "__main__":
     main()
