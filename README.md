@@ -10,10 +10,10 @@ Two different algorithms were implemented with different options and upgrades. B
 Upgrade | DPLL | CDCL
 ------- | ---- | ----
 pureLiterals | :heavy_check_mark: | :x:
-[2WL](#two-watched-lists-2wl "Goto 2WL") | :x: | :heavy_check_mark:
-[UIP](#unit-implication-point-uip "Goto UIP") | :x: | :heavy_check_mark:
-[Heuristics](#heuristics "Goto Heuristics") | :x: | :heavy_check_mark:
-[Resets](#resets "Goto Resets") | :x: | :heavy_check_mark:
+[2WL](#two-watched-lists-2wl "Go to 2WL") | :x: | :heavy_check_mark:
+[UIP](#unit-implication-point-uip "Go to UIP") | :x: | :heavy_check_mark:
+[Heuristics](#heuristics "Go to Heuristics") | :x: | :heavy_check_mark:
+[Resets](#resets "Go to Resets") | :x: | :heavy_check_mark:
 
 ### Two watched lists (2WL)
 Instead of keeping track of every literal in the clause, we only watch two of them. If one of them becomes `False` and the other one is not `True`, we try to find a new literal that is not `False` to watch. This way, we will always recognize if the clause is `False`, but might not know if it satisfied.
@@ -41,18 +41,19 @@ Available options to change the behaviour of the algorithm are:
 * `-h` or `--heuristics`: runs `CDCL` without heuristics (chooses the first available variable when making a decision)
 * `-p:` or `--resetPoint=`: takes an integer and determines the starting point for reset depth
 * `-c` or `--conflicts`: prints the number of conflicts found while solving the problem
+* `-t` or `--time`: prints time used to solve the problem (including read and write times unlike the [table](#benchmarking "Go to Benchmarking") below)
 
 Some problems may be solved faster with different settings, thus these options are available. Take note that changing settings concerning pure literals only works for `DPLL` algorithm, while the rest of the options only change the behaviour of the `CDCL` algorithm.
 
 ## Setting up tests
-Several `Python` files are included that generate SAT problems. Those are [n-queens](Examples/nqueens/nqueens2sat.py), [dominating set](Examples/domset/domset2sat.py), [colourability](Examples/colourability/col2sat.py), [hamiltonian path](Examples/hamiltonian_path/hampath2sat.py), [hamiltonian cycle](Examples/hamiltonian_cycle/hamcycle2sat.py) and [sudoku](Examples/sudoku/sudoku2sat.py).
+Several `Python` files are included that generate SAT problems. Those are [n-queens](Examples/nqueens/nqueens2sat.py), [dominating set](Examples/domset/domset2sat.py "Open source code"), [colourability](Examples/colourability/col2sat.py "Open source code"), [hamiltonian path](Examples/hamiltonian_path/hampath2sat.py "Open source code"), [hamiltonian cycle](Examples/hamiltonian_cycle/hamcycle2sat.py "Open source code") and [sudoku](Examples/sudoku/sudoku2sat.py "Open source code").
 
-A file [checkResult](Examples/checkResult.py) was also added which checks the validity of the result (in the format of the output of implemented algorithms) compared to the CNF formula given in DIMACS format. It can be run with:
+A file [checkResult](Examples/checkResult.py "Open source code") was also added which checks the validity of the result (in the format of the output of implemented algorithms) compared to the CNF formula given in DIMACS format. It can be run with:
 
 `python Examples/checkResult.py <input CNF name> <result file name>`
 
 ## Benchmarking
-Below are some benchmarks using both algorithms with different options. All test files can be found in [Examples](Examples). If the solution was not found within 5 minutes, the program was stopped (marked with :x: in the table).
+Below are some benchmarks using both algorithms with different options. All test files can be found in [Examples](Examples "Go to Examples"). If the solution was not found within 5 minutes, the program was stopped (marked with :x: in the table).
 
 Input file | DPLL | DPLL -l | CDCL | CDCL -r
 ---------- | ---- | ------- | ---- | -------
